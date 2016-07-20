@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" type="text/css" href="css/page.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="script/exchange.js"></script>
+</head>
+<body>
+<h1>This website is designed for URL shortening function</h1>
+<div id="input" ng-app="">
+    <p>Please input the long URL you want to convert:</p>
+    <p>
+        <form name="urlReceiver">
+            URL: <input name="longURL" type="url" ng-model="longURL" size="80" placeholder="http://www.example.com">
+            &nbsp&nbsp&nbsp
+            <button type="button" onclick="check()">Convert to Short URL</button>
+        </form>
+    </p>
+    <p id="input_warning"><span ng-show="urlReceiver.longURL.$touched && urlReceiver.longURL.$invalid">Please input a valid URL. Example: http://www.example.com</span></p>
+</div>
+
+<div id="display" style="padding-top: 20px; visibility: hidden">
+    <p>Acquired Short URL:</p>
+    <a id="short_url" href=""></a>
+</div>
+</body>
+</html>
