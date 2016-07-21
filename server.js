@@ -11,7 +11,6 @@ var ejs = require('ejs');
 var path = require('path');
 var url = require('url');
 var mongoose = require('mongoose');
-var async = require('async');
 
 
 mongoose.connect('mongodb://127.0.0.1:27017/');
@@ -34,27 +33,6 @@ var Data = mongoose.model('urlMapping', UrlSchema);
 app.set('view engine', 'html');
 app.engine('html', ejs.renderFile);
 app.use(express.static(path.join(__dirname, 'www')));
-
-app.get('/', function(req, res) {
-
-    /**
-    var record = {
-        short: "e",
-        long: "mmn"
-    };
-
-
-    var data = new Data(record);
-    data.save();
-    **/
-        /**
-    var w = 'mmn';
-    Data.find({long : w},{ _id:0, short:0 })
-        .then(function(doc) {
-        res.send(doc);
-    });
-    **/
-});
 
 app.get('/urlshortener', function(req, res) {
     res.render('index', {title:'paint title'});
