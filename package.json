@@ -1,0 +1,8 @@
+{
+  "name": "url_shortener",
+  "dependencies": {
+    "express": "latest",
+    "mongoose": "latest",
+    "ejs": "latest"
+  }
+}
